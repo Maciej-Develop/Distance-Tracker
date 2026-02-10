@@ -1,30 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="600.0" prefWidth="900.0">
          <left>
-            <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #0F4C75;" BorderPane.alignment="CENTER" />
+            <VBox alignment="CENTER" prefHeight="600.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #0F4C75;">
+               <children>
+                  <Label text="Add a day" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label text="Km one way" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField focusTraversable="false" prefHeight="25.0" prefWidth="145.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label text="First address :" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox focusTraversable="false" prefHeight="25.0" prefWidth="180.0" promptText="Select an address" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField focusTraversable="false" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Label text="Km between" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox focusTraversable="false" prefHeight="25.0" prefWidth="180.0" promptText="Select an address" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Km return" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField focusTraversable="false" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Add">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
          </left>
          <top>
-            <HBox prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: #1B262C;" BorderPane.alignment="CENTER" />
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="900.0" style="-fx-background-color: #1B262C;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Distance Tracker" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </HBox>
          </top>
          <center>
             <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
                   <TableView prefHeight="524.0" prefWidth="700.0">
                     <columns>
-                      <TableColumn editable="false" prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn editable="false" minWidth="-Infinity" prefWidth="60.0" resizable="false" sortable="false" text="Day" />
+                        <TableColumn editable="false" sortable="false" text="Km one way" />
+                      <TableColumn editable="false" prefWidth="200.0" sortable="false" text="First user's address" />
+                      <TableColumn editable="false" sortable="false" text="Km between" />
+                        <TableColumn editable="false" prefWidth="200.0" sortable="false" text="Second user's address" />
+                        <TableColumn editable="false" sortable="false" text="Km return" />
                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
                   </TableView>
                </children>
             </VBox>
